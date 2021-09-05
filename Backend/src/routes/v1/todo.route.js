@@ -11,9 +11,16 @@ const Todos = require("../../models/todo.model");
  * 
  */
 router.get("/", async (req, res) => {
-  res.send({});
+   console.log(
+      `URL:  /v1/todos${req.url == "/" ? "" : req.url}, Method:  ${req.method}, Timestamp: ${new Date()}`
+    );
+   const allTodos = await Todos.find({});
+   res.send(allTodos);
+   return res
 });
 
+
+ 
 /**
  * Add a TODO to the list
  * curl -X POST http://localhost:8082/v1/todos \
