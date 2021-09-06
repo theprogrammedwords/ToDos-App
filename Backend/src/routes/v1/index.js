@@ -7,7 +7,7 @@ router.use("/randomRoute", todoRoute);
 router.use("/todos", todoRoute);
 
 // Uncomment in Milestone 5
-// const testRoute = require("./test.route");
-// router.use("/test", testRoute);
+ const testRoute = require("./test.route");
+ router.use("/test", testRoute);
 
 module.exports = router;
